@@ -1,15 +1,25 @@
 /* Ask user if they want to play */
-let startGame = prompt("Would you like to play Rock, Paper, Scissors?")
-startGame.toLowerCase()
 /* if yes, play game */
-if (startGame == "yes" || "y"){
-console.log("You chose yes")
-}
-/* if no, exit */
-else {
-console.log("Okay bye den.")
+while (true){
+    let startGame = prompt("Would you like to play Rock, Paper, Scissors?")
+    startGame = startGame.toLowerCase();
+
+    if (startGame === "yes"){
+        console.log("You chose yes")
+        break;
+    }
+    /* if no, exit */
+    else if (startGame === "no"){
+        console.log("Okay bye den.")
+        break;
+    }
+    else{
+        console.log("Try again")
+        continue;
+    }
 }
 /*start game */
+
 /*ask user for rock, paper, or scissors */
 /* generate rock, paper, or scissors from computer */
 /* tell user what both chose and print result */
