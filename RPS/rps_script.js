@@ -6,6 +6,8 @@ while (true){
 
     if (startGame === "yes"){
         console.log("You chose yes")
+        playGame();
+
         break;
     }
     /* if no, exit */
@@ -19,9 +21,49 @@ while (true){
     }
 }
 /*start game */
-
-/*ask user for rock, paper, or scissors */
+function playRound(userChoice, botChoice){
+    if (userChoice === botChoice){
+        return "Draw!";
+    }
+    else if (userChoice === "rock" && botChoice === "scissors"){
+        return "You win!";
+    }
+    else if (userChoice === "paper" && botChoice === "rock"){
+        return "You win!";
+    }
+    else if (userChoice === "scissors" && botChoice === "paper"){
+        return "You win!";
+    }
+    else {
+        return "You lose!";
+    }
+}
 /* generate rock, paper, or scissors from computer */
-/* tell user what both chose and print result */
+function computerChoice(){
 
+    let botChoice = Math.floor(Math.random() * (3 - 1 +1)) + 1;
+
+    switch (botChoice){
+        case 1: 
+            return "rock";
+        case 2:
+            return "paper";
+        case 3:
+            return "scissors";    
+    }
+
+}
+/*ask user for rock, paper, or scissors */
+function userChoice(){
+    let choice = prompt("Rock, paper, or scissors?");
+    choice = choice.toLowerCase();
+    return choice;
+}
+/* tell user what both chose and print result */
+function playGame(){
+    let user = userChoice();
+    let computer = computerChoice();
+    console.log("You chose " + user + " and the computer chose " + computer + ": ", 
+    playRound(userChoice, computerChoice) );
+}
 /* play game five rounds */
