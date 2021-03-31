@@ -82,11 +82,14 @@ function userChoice(){
 /* tell user what both chose and print result */
 function playGame(){
     /* play game five rounds */
-    for (i=0; i<5; i++){
+    for (i=1; i<6; i++){
+        let round = i;
         let user = userChoice();
         let computer = computerChoice();
+        console.log("Round " + round + ":")
         console.log("You chose " + user + " and the computer chose " + computer + ": ", 
         playRound(user, computer) );
+
         if (i == 4){
             console.log("Thanks for playing!")
         }
