@@ -5,14 +5,14 @@ while (true){
     startGame = startGame.toLowerCase();
 
     if (startGame === "yes"){
-        console.log("You chose yes")
+        console.log("Let's play!")
         playGame();
 
         break;
     }
     /* if no, exit */
     else if (startGame === "no"){
-        console.log("Okay bye den.")
+        console.log("Okay see ya later!")
         break;
     }
     else{
@@ -20,24 +20,26 @@ while (true){
         continue;
     }
 }
+
 /*start game */
 function playRound(userChoice, botChoice){
     if (userChoice === botChoice){
         return "Draw!";
     }
     else if (userChoice === "rock" && botChoice === "scissors"){
-        return "You win!";
+        return "You win!"
     }
     else if (userChoice === "paper" && botChoice === "rock"){
-        return "You win!";
+        return "You win!"
     }
     else if (userChoice === "scissors" && botChoice === "paper"){
-        return "You win!";
+        return "You win!"
     }
     else {
-        return "You lose!";
+        return "You lose!"
     }
 }
+
 /* generate rock, paper, or scissors from computer */
 function computerChoice(){
 
@@ -49,21 +51,44 @@ function computerChoice(){
         case 2:
             return "paper";
         case 3:
-            return "scissors";    
+            return "scissors";   
+        default:
+            return "error";     
     }
 
 }
 /*ask user for rock, paper, or scissors */
 function userChoice(){
-    let choice = prompt("Rock, paper, or scissors?");
-    choice = choice.toLowerCase();
-    return choice;
+    while (true){
+        let choice = prompt("Rock, paper, or scissors?");
+        choice = choice.toLowerCase();
+
+        switch (choice){
+            case 'rock':
+                return choice;
+            case 'paper':
+                return choice;
+            case 'scissors':  
+                return choice;
+            default:
+                console.log("Invalid input, try again.")
+                continue;       
+        }
+
+    }
 }
+
+
 /* tell user what both chose and print result */
 function playGame(){
-    let user = userChoice();
-    let computer = computerChoice();
-    console.log("You chose " + user + " and the computer chose " + computer + ": ", 
-    playRound(userChoice, computerChoice) );
+    /* play game five rounds */
+    for (i=0; i<5; i++){
+        let user = userChoice();
+        let computer = computerChoice();
+        console.log("You chose " + user + " and the computer chose " + computer + ": ", 
+        playRound(user, computer) );
+        if (i == 4){
+            console.log("Thanks for playing!")
+        }
+    }
 }
-/* play game five rounds */
