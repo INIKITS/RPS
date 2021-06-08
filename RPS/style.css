@@ -1,0 +1,85 @@
+body {
+    /* background-image: url(https://i.imgur.com/sLVfSv9.jpg); */
+    background-color: black;
+    
+
+        min-width: 100%;
+        min-height: 100%;
+        background-size: cover; /* or contain depending on what you want */
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align:center;
+        margin:auto;
+        padding:0;
+} 
+
+header{
+    font-size: 75px;
+    color:rgb(14, 136, 236);
+}
+
+#win {
+    color: rgb(14, 136, 236);
+    text-shadow: white;
+    font-size: 30px;
+    margin: 30px;
+    display: inline-flex;
+    animation: fadein 2s;
+
+
+}
+#lose {
+    color: rgb(14, 136, 236);
+    text-shadow: white;
+    font-size: 30px;
+    margin: 30px;
+    display: inline-flex;
+    animation: fadein 2s;
+
+
+}
+@keyframes fadein{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+#scoreboard {
+    color: rgb(14, 136, 236);
+    text-shadow: white;
+    font-size: 30px;
+    margin: 30px;
+    display: inline-flex;
+}
+
+#userButtons{
+    
+    background-size:contain;
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    text-shadow: rgb(14, 136, 236);;
+    font-size: 15px;
+    margin: 30px;
+    }
+
+#userButtons:active{
+    border-style: solid;
+    border: rgb(14, 136, 236);
+}  
+
+.rockButton{
+    background-image: url(https://i.imgur.com/idbZJd5.png);
+}    
+
+.paperButton{
+    background-image: url(https://i.imgur.com/jKMe04D_d.webp?maxwidth=760&fidelity=grand);
+}
+
+.scissorButton{
+    background-image: url(https://i.imgur.com/ZsjUIT9_d.webp?maxwidth=760&fidelity=grand);
+}
