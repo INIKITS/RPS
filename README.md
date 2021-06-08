@@ -1,0 +1,1 @@
+# This is a project from The Odin Project. The goal was to make a rock, paper, scissors game using mostly Javascript. The program keeps track of how many wins/losses there are and declares a winner after someone has won five times.
